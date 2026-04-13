@@ -81,6 +81,11 @@ public class FileIO : MonoBehaviour
 
         //2. **파일 목록 출력**: `Directory.GetFiles`로 폴더 내 모든 파일을 조회하고, 각 파일의 이름과 확장자를 출력할 것
         string dir = Path.Combine(Application.persistentDataPath, "SaveData");
+        string backup = Path.Combine(Application.persistentDataPath, "SaveData", "save1_backup.txt");
+        if (File.Exists(backup) == true)
+        {
+            File.Delete(backup);
+        }
 
         Debug.Log("=== 세이브 파일 목록 ===");
         var files = Directory.GetFiles(dir);
@@ -90,7 +95,6 @@ public class FileIO : MonoBehaviour
         }
 
         //3. **파일 복사**: `save1.txt`를 `save1_backup.txt`로 복사할 것 (`File.Copy`)
-        string backup = Path.Combine(Application.persistentDataPath, "SaveData", "save1_backup.txt");
         File.Copy(save1, backup);
         Debug.Log("save1.txt → save1_backup.txt 복사 완료");
 
