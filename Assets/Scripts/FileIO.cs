@@ -182,7 +182,10 @@ public class FileIO : MonoBehaviour
         Debug.Log($"원본과 일치: {decrypt == origin}");
 
         //3
+
         string settings = Path.Combine(Application.persistentDataPath, "settings.cfg");
+
+        File.WriteAllText(settings, " master_volume=80\nbgm_volume=70\nsfx_volume=90\nlanguage=kr\nshow_damage=true");
 
         Dictionary<string, string> keyValue = new Dictionary<string, string>();
         using (StreamReader reader = File.OpenText(settings))

@@ -1,0 +1,21 @@
+﻿Id,String
+HELLO,Hello~
+BYE,Bye~
+YOU DIE,You Die...
+Item1Name,Sword
+Item2Name,Shield
+Item3Name,Bow
+Item4Name,Potion
+Item1Desc,This is a sword.
+Item2Desc,This is a shield.
+Item3Desc,This is a bow.
+Item4Desc,This is a potion.
+Character1Name,Ren
+Character2Name,Angelic Buster
+Character3Name,Mercedes
+Character4Name,Khali
+Character1Desc,The Red-Eyed Wanderer
+Character2Desc,battlefield idol
+Character3Desc,king of the elves
+Character4Desc,Wind of Revenge
+Attack,Attack

@@ -1,0 +1,21 @@
+﻿Id,String
+HELLO,안녕
+BYE,잘가
+YOU DIE,너 죽음
+Item1Name,검
+Item2Name,방패
+Item3Name,활 
+Item4Name,물약 
+Item1Desc,이것은 검이다.
+Item2Desc,이것은 방패다.
+Item3Desc,이것은 활이다.
+Item4Desc,이것은 물약이다.
+Character1Name,렌
+Character2Name,엔젤릭버스터
+Character3Name,메르세데스
+Character4Name,칼리
+Character1Desc,붉은 눈의 유랑자
+Character2Desc,전장의 아이돌
+Character3Desc,엘프의 왕
+Character4Desc,복수의 바람
+Attack,공격력
