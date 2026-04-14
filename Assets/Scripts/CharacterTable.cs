@@ -16,6 +16,7 @@ public class CharacterData
 
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
+    public string State => $"{DataTableManager.StringTable.Get("Attack")} {AttackDmg}";
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 }
 

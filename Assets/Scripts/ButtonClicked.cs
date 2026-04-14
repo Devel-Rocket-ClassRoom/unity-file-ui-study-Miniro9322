@@ -55,11 +55,9 @@ public class ButtonClicked : MonoBehaviour
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;
-        textAttack.id = "Attack";
+        textAttack.text.text = data.State;
 
         textName.OnChangedId();
         textDesc.OnChangedId();
-        textAttack.OnChangedId();
-        textAttack.text.text += $" {data.AttackDmg}";
     }
 }
