@@ -1,13 +1,13 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class ButtonClicked : MonoBehaviour
 {
     public Image icon;
     public LocalizationText textName;
     public LocalizationText textDesc;
+    public LocalizationText textAttack;
+
 
     public void Start()
     {
@@ -23,6 +23,7 @@ public class ButtonClicked : MonoBehaviour
 
         textName.text.text = string.Empty;
         textDesc.text.text = string.Empty;
+        textAttack.text.text = string.Empty;
     }
 
     public void SetItemData(string itemId)
@@ -54,9 +55,11 @@ public class ButtonClicked : MonoBehaviour
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;
+        textAttack.id = "Attack";
 
         textName.OnChangedId();
         textDesc.OnChangedId();
-
+        textAttack.OnChangedId();
+        textAttack.text.text += $" {data.AttackDmg}";
     }
 }

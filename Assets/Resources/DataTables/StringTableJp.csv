@@ -1,4 +1,5 @@
 ﻿Id,String
+,
 HELLO,やあ
 BYE,じゃあな
 YOU DIE,あなたは死ぬ
@@ -18,4 +19,4 @@ Character1Desc,緋眼の旅人
 Character2Desc,戦場のアイドル
 Character3Desc,エルフの王
 Character4Desc,復讐の風
-Attack,アタック
+Attack,攻撃力

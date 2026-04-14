@@ -65,7 +65,7 @@ public class LocalizationText : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    private void OnChangeLanguage(Languages lang)
+    public void OnChangeLanguage(Languages lang)
     {
         var stringTable = DataTableManager.GetStringTable(lang);
         text.text = stringTable.Get(id);
@@ -84,12 +84,12 @@ public class LocalizationText : MonoBehaviour
     [ContextMenu("ChangeLanguage()")]
     private void ChangeLanguage()
     {
-        var texts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
+        var texts = FindObjectsByType<LocalizationText>(FindObjectsSortMode.None);
 
         foreach(var text in texts)
         {
-            var stringTable = DataTableManager.GetStringTable(languages);
-            text.text = stringTable.Get(id);
+            text.languages = languages;
+            text.OnChangeLanguage(languages);
         }
     }
 #endif

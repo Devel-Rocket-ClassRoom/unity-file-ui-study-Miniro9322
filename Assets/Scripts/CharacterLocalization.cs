@@ -13,6 +13,7 @@ public class CharacterLocalization : LocalizationText
     {
 #if UNITY_EDITOR
         OnChangedItemId();
+        OnChangeLanguage(languages);
 #endif
     }
 
