@@ -20,12 +20,11 @@ public class LocalizationText : MonoBehaviour
 
 
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         if (Application.isPlaying)
         {
             Variables.OnLanguageChanged += OnChangeLanguage;
-
             OnChangedId();
         }
 #if UNITY_EDITOR

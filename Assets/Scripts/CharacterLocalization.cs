@@ -17,9 +17,10 @@ public class CharacterLocalization : LocalizationText
 #endif
     }
 
-    private void OnEnable()
+    private new void OnEnable()
     {
         OnChangedItemId();
+        base.OnEnable();
     }
 
     public void ButtonClicked()

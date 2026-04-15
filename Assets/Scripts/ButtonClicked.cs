@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,13 @@ public class ButtonClicked : MonoBehaviour
     public Image icon;
     public LocalizationText textName;
     public LocalizationText textDesc;
-    public LocalizationText textAttack;
+    public TextMeshProUGUI textState;
+    private CharacterData data;
 
+    private void OnEnable()
+    {
+        Variables.OnLanguageChanged += LanguageChange;
+    }
 
     public void Start()
     {
@@ -23,7 +29,7 @@ public class ButtonClicked : MonoBehaviour
 
         textName.text.text = string.Empty;
         textDesc.text.text = string.Empty;
-        textAttack.text.text = string.Empty;
+        textState.text = string.Empty;
     }
 
     public void SetItemData(string itemId)
@@ -46,8 +52,13 @@ public class ButtonClicked : MonoBehaviour
 
     public void SetCharacterData(string characterid)
     {
-        CharacterData data = DataTableManager.CharacterTable.Get(characterid);
+        data = DataTableManager.CharacterTable.Get(characterid);
         SetCharacterData(data);
+    }
+
+    private void LanguageChange()
+    {
+        textState.text = data.State;
     }
 
     public void SetCharacterData(CharacterData data)
@@ -55,9 +66,16 @@ public class ButtonClicked : MonoBehaviour
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;
-        textAttack.text.text = data.State;
+        textState.text = data.State;
+
+        Debug.Log(textState.text);
 
         textName.OnChangedId();
         textDesc.OnChangedId();
+    }
+
+    private void OnDisable()
+    {
+        Variables.OnLanguageChanged -= LanguageChange;
     }
 }
