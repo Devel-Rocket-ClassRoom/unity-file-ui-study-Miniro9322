@@ -436,7 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterLocalization
   text: {fileID: 2037672433}
   id: Character4Name
-  languages: 2
+  languages: 0
   icon: {fileID: 1643803136}
   characterId: Character4
   itemInfo: {fileID: 1875315213}
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30A8\u30F3\u30B8\u30A7\u30EA\u30C3\u30AF\u30D0\u30B9\u30BF\u30FC"
+  m_text: "\uC5D4\uC824\uB9AD\uBC84\uC2A4\uD130"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
   m_sharedMaterial: {fileID: -2253834616945413019, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterLocalization
   text: {fileID: 1571069016}
   id: Character3Name
-  languages: 2
+  languages: 0
   icon: {fileID: 130399518}
   characterId: Character3
   itemInfo: {fileID: 1875315213}
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   text: {fileID: 911947519}
   id: 
-  languages: 2
+  languages: 0
 --- !u!114 &911947519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,7 +3407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   text: {fileID: 1201398193}
   id: 
-  languages: 2
+  languages: 0
 --- !u!114 &1201398193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4076,7 +4076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterLocalization
   text: {fileID: 487369002}
   id: Character2Name
-  languages: 2
+  languages: 0
   icon: {fileID: 1681113333}
   characterId: Character2
   itemInfo: {fileID: 1875315213}
@@ -4640,7 +4640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30E1\u30EB\u30BB\u30C7\u30B9"
+  m_text: "\uBA54\uB974\uC138\uB370\uC2A4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
   m_sharedMaterial: {fileID: -2253834616945413019, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
@@ -5154,7 +5154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   text: {fileID: 1774187354}
   id: 
-  languages: 2
+  languages: 0
 --- !u!114 &1774187354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5312,7 +5312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ren
+  m_text: "\uB80C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
   m_sharedMaterial: {fileID: -2253834616945413019, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
@@ -5541,7 +5541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterLocalization
   text: {fileID: 1776151290}
   id: Character1Name
-  languages: 1
+  languages: 0
   icon: {fileID: 299911940}
   characterId: Character1
   itemInfo: {fileID: 1875315213}
@@ -6183,7 +6183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30AB\u30FC\u30EA\u30FC"
+  m_text: "\uCE7C\uB9AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
   m_sharedMaterial: {fileID: -2253834616945413019, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
