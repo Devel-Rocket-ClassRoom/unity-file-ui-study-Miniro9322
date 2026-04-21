@@ -20,3 +20,25 @@ Character2Desc,battlefield idol
 Character3Desc,king of the elves
 Character4Desc,Wind of Revenge
 Attack,Attack
+Name,Name
+Desc,Description
+Type,Type
+Value,Value
+Cost,Cost
+Weapon,Weapon
+Equip,Equip
+Consumable,Consumable
+CreationTimeAscending,Date (Ascending)
+CreationTimeDescending,Date (Descending)
+NameAscending,Name (Ascending)
+NameDescending,Name (Descending)
+None,None
+ValueAscending,Value (Ascending)
+ValueDescending,Value (Descending)
+CostAscending,Cost (Ascending)
+CostDescending,Cost (Descending)
+NotConsumable,NotConsumable
+Save,Save
+Load,Load
+Add,Add Item
+Remove,Remove Item

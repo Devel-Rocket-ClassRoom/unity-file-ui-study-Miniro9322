@@ -20,3 +20,25 @@ Character2Desc,戦場のアイドル
 Character3Desc,エルフの王
 Character4Desc,復讐の風
 Attack,攻撃力
+Name,名前
+Desc,説明
+Type,タイプ
+Value,値
+Cost,コスト
+Weapon,武器
+Equip,装備
+Consumable,消耗品
+CreationTimeAscending,日付 (昇順)
+CreationTimeDescending,日付 (降順)
+NameAscending,名前 (昇順)
+NameDescending,名前 (降順)
+None,無
+ValueAscending,値 (昇順)
+ValueDescending,値 (降順)
+CostAscending,コスト (昇順)
+CostDescending,コスト (降順)
+NotConsumable,消耗品以外
+Save,セーブ
+Load,ロード
+Add,アイテム追加
+Remove,アイテム削除

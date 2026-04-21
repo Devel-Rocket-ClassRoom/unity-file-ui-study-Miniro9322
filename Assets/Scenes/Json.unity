@@ -379,11 +379,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JsonPractice
   cube: {fileID: 194999816}
-  Prefabs:
+  prefabs:
   - {fileID: 552471916080347052, guid: 9a865d654a66b6149b001719f03ec7ac, type: 3}
   - {fileID: 5608235869805904210, guid: 1f8df4ed8c0d9c142bd072983853dfa7, type: 3}
   - {fileID: 6313736584015301056, guid: b80b9c71b0f9f6344a9db6bd5ee941ac, type: 3}
   - {fileID: 2359357748395073267, guid: 14cf7d59d1c62ec4a99cb7fff99dfda8, type: 3}
+  prefNames:
+  - Cube
+  - Sphere
+  - Capsule
+  - Cylinder
   fileName: practice.json
 --- !u!1 &341809136
 GameObject:
