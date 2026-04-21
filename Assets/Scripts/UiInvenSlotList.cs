@@ -51,10 +51,13 @@ public class UiInvenSlotList : MonoBehaviour
     public UIItemSlot prefab;
     public ScrollRect scrollRect;
     public UiItemInfo itemInfo;
+    public UiPannelInventory inventory;
 
     private List<UIItemSlot> uiSlotList = new();
 
     private List<SaveItemData> saveItemDataList = new();
+
+    public string Type = string.Empty;
 
     private SortingOptions sorting = SortingOptions.CreationTimeAscending;
     private FilteringOptions filtering = FilteringOptions.None;
@@ -86,11 +89,25 @@ public class UiInvenSlotList : MonoBehaviour
     }
 
     private int selectedSlotIndex = -1;
+    public UiCharacterInfo info;
 
     private void OnsSelectSlot(SaveItemData saveItemData)
     {
         itemInfo.SetSaveItemData(saveItemData);
-        Debug.Log(saveItemData);
+        Debug.Log(Type);
+        switch (Type)
+        {
+            case "Weapon":
+                info.saveCharacterData.Weapon = saveItemData;
+                info.Weapon.SetItem(saveItemData);
+                break;
+            case "Equip":
+                info.saveCharacterData.Equip = saveItemData;
+                Debug.Log(saveItemData == null);
+                info.Equip.SetItem(saveItemData);
+                break;
+        }
+        inventory.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -100,8 +117,8 @@ public class UiInvenSlotList : MonoBehaviour
 
     private void OnDisable()
     {
-
         saveItemDataList = null;
+        Type = string.Empty;
     }
 
     public void SetSaveItemDataList(List<SaveItemData> source, SortingOptions sorting, FilteringOptions filtering)

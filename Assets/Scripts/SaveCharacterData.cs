@@ -7,8 +7,9 @@ public class SaveCharacterData
 {
     public Guid instanceId { get; set; }
 
-    [JsonConverter(typeof(ItemDataConverter))]
-    public ItemData ItemData { get; set; }
+    public SaveItemData Weapon { get; set; }
+
+    public SaveItemData Equip { get; set; }
 
     [JsonConverter(typeof(CharacterDataConverter))]
     public CharacterData CharacterData { get; set; }
@@ -34,6 +35,6 @@ public class SaveCharacterData
 
     public override string ToString()
     {
-        return $"{instanceId}\n{creationTime}\n{CharacterData.Id}";
+        return $"{instanceId}\n{creationTime}\n{CharacterData.Id}\n{Weapon}\n{Equip}";
     }
 }

@@ -1,4 +1,5 @@
 Id,Name,Desc,AttackDmg,Icon
+,,,0,
 Character1,Character1Name,Character1Desc,100,Icon_Sword01
 Character2,Character2Name,Character2Desc,50,Icon_Heart01
 Character3,Character3Name,Character3Desc,25,Icon_Bow02

@@ -104,6 +104,8 @@ public class SaveDataV4 : SaveDataV2
 public class SaveDataV5 : SaveDataV4
 {
     public List<SaveCharacterData> CharacterList = new();
+    public SaveItemData Weapon;
+    public SaveItemData Equip;
     public UiInvenSlotList.SortingOptions Sorting = UiInvenSlotList.SortingOptions.CreationTimeAscending;
     public UiInvenSlotList.FilteringOptions Filtering = UiInvenSlotList.FilteringOptions.None;
 

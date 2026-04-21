@@ -42,3 +42,5 @@ Save,Save
 Load,Load
 Add,Add Item
 Remove,Remove Item
+AddCharacter,Add　Character
+RemoveCharacter,Remove　Character

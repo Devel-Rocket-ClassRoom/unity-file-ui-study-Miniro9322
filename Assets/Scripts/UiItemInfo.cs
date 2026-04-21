@@ -33,7 +33,6 @@ public class UiItemInfo : MonoBehaviour
         textDesc.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Desc"), data.StringDesc);
 
         string id = data.Type.ToString();
-        Debug.Log(id);
 
         textType.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Type"), DataTableManager.StringTable.Get(id));
         textValue.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Name"), data.Value);

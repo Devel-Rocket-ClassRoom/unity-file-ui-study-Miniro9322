@@ -30,6 +30,6 @@ public class SaveItemData
 
     public override string ToString()
     {
-        return $"{instanceId}\n{creationTime}\n{ItemData.Id}";
+        return $"{instanceId}\n{creationTime}\n{ItemData?.Id}";
     }
 }

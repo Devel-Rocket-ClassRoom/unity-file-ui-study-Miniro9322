@@ -47,6 +47,7 @@ public class CharacterTable : DataTable
         }
 
         keyList = table.Keys.ToList();
+        keyList.Remove(string.Empty);
     }
 
     public CharacterData Get(string id)

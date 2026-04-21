@@ -31,6 +31,10 @@ public class UiCharacterSlotList : MonoBehaviour
     private SortingOptions sorting = SortingOptions.CreationTimeAscending;
     private FilteringOptions filtering = FilteringOptions.None;
 
+    public string Type;
+    private int maxSlot = 8;
+    private int charCount = 0;
+
     public SortingOptions Sorting
     {
         get { return sorting; }
@@ -61,19 +65,34 @@ public class UiCharacterSlotList : MonoBehaviour
 
     private void OnsSelectSlot(SaveCharacterData saveCharacterData)
     {
+        if(saveCharacterData == null)
+        {
+            return;
+        }
         characterInfo.SetSaveCharacterData(saveCharacterData);
-        Debug.Log(saveCharacterData);
     }
 
     private void Start()
     {
+        if(saveCharacterDataList.Count >= maxSlot)
+        {
+            UpdateSlots();
+            return;
+        }
         onSelectSlot.AddListener(OnsSelectSlot);
+        for(int i = 0; i < maxSlot; i++)
+        {
+            var character = new SaveCharacterData();
+            character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
+            saveCharacterDataList.Add(character);
+        }
+        UpdateSlots();
     }
 
     private void OnDisable()
     {
-
         saveCharacterDataList = null;
+        Type = string.Empty;
     }
 
     public void SetSaveCharacterDataList(List<SaveCharacterData> source, SortingOptions sorting, FilteringOptions filtering)
@@ -136,7 +155,13 @@ public class UiCharacterSlotList : MonoBehaviour
 
     public void AddRandomCharacter()
     {
-        saveCharacterDataList.Add(SaveCharacterData.GetRandomCharacter());
+        if(charCount >= maxSlot)
+        {
+            return;
+        }
+
+        saveCharacterDataList[charCount] = SaveCharacterData.GetRandomCharacter();
+        charCount++;
         UpdateSlots();
     }
 
@@ -148,6 +173,10 @@ public class UiCharacterSlotList : MonoBehaviour
         }
 
         saveCharacterDataList.Remove(uiSlotList[selectedSlotIndex].SaveCharacterData);
+        var character = new SaveCharacterData();
+        character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
+        saveCharacterDataList.Add(character);
+        charCount--;
         UpdateSlots();
         characterInfo.SetEmpty();
     }

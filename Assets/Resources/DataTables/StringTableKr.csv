@@ -42,3 +42,5 @@ Save,저장
 Load,불러오기
 Add,아이템 추가
 Remove,아이템 삭제
+AddCharacter,캐릭터 추가
+RemoveCharacter,캐릭터 삭제
