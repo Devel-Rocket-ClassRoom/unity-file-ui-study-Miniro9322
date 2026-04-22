@@ -38,17 +38,4 @@ public class UiItemInfo : MonoBehaviour
         textValue.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Name"), data.Value);
         textCost.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Name"), data.Cost);
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SetEmpty();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetSaveItemData(SaveItemData.GetRandomItem());
-        }
-    }
 }

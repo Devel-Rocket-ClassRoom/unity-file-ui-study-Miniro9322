@@ -21,6 +21,8 @@ public class UiCharacterInfo : MonoBehaviour
         textName.text = string.Empty;
         textDesc.text = string.Empty;
         textAtk.text = string.Empty;
+        Weapon.SetEmpty();
+        Equip.SetEmpty();
     }
 
     public void SetSaveCharacterData(SaveCharacterData saveCharacterData)

@@ -1,3 +1,5 @@
+using Mono.Cecil;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -69,6 +71,7 @@ public class UiCharacterSlotList : MonoBehaviour
         {
             return;
         }
+        Debug.Log(1);
         characterInfo.SetSaveCharacterData(saveCharacterData);
     }
 
@@ -76,6 +79,8 @@ public class UiCharacterSlotList : MonoBehaviour
     {
         if(saveCharacterDataList.Count >= maxSlot)
         {
+            Debug.Log(charCount);
+            onSelectSlot.AddListener(OnsSelectSlot);
             UpdateSlots();
             return;
         }
@@ -84,6 +89,8 @@ public class UiCharacterSlotList : MonoBehaviour
         {
             var character = new SaveCharacterData();
             character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
+            character.creationTime = DateTime.MaxValue;
+            character.instanceId = Guid.Empty;
             saveCharacterDataList.Add(character);
         }
         UpdateSlots();
@@ -100,6 +107,13 @@ public class UiCharacterSlotList : MonoBehaviour
         saveCharacterDataList = source.ToList();
         this.sorting = sorting;
         this.filtering = filtering;
+        foreach (var temp in saveCharacterDataList)
+        {
+            if (temp.CharacterData.SpriteIcon != null)
+            {
+                charCount++;
+            }
+        }
         UpdateSlots();
     }
 
@@ -140,6 +154,7 @@ public class UiCharacterSlotList : MonoBehaviour
             if (i < list.Count)
             {
                 uiSlotList[i].gameObject.SetActive(true);
+                Debug.Log(list[i]);
                 uiSlotList[i].SetItem(list[i]);
             }
             else
@@ -159,7 +174,6 @@ public class UiCharacterSlotList : MonoBehaviour
         {
             return;
         }
-
         saveCharacterDataList[charCount] = SaveCharacterData.GetRandomCharacter();
         charCount++;
         UpdateSlots();
@@ -175,6 +189,9 @@ public class UiCharacterSlotList : MonoBehaviour
         saveCharacterDataList.Remove(uiSlotList[selectedSlotIndex].SaveCharacterData);
         var character = new SaveCharacterData();
         character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
+        character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
+        character.creationTime = DateTime.MaxValue;
+        character.instanceId = Guid.Empty;
         saveCharacterDataList.Add(character);
         charCount--;
         UpdateSlots();
