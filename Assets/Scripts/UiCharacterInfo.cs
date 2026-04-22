@@ -32,13 +32,10 @@ public class UiCharacterInfo : MonoBehaviour
 
         CharacterIcon.sprite = data.SpriteIcon;
         Weapon.SetItem(saveCharacterData.Weapon);
-        Debug.Log("오류안남");
         Equip.SetItem(saveCharacterData.Equip);
-        Debug.Log("오류안남");
         textName.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Name"), data.StringName);
         textDesc.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Desc"), data.StringDesc);
-        textAtk.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Attack"), data.AttackDmg);
-        Debug.Log(saveCharacterData.Weapon);
+        textAtk.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("Attack"), data.AttackDmg + (saveCharacterData.Weapon == null ? 0 : saveCharacterData.Weapon.ItemData.Value));
     }
 
     public void OpenInventory(string type)

@@ -44,3 +44,4 @@ Add,アイテム追加
 Remove,アイテム削除
 AddCharacter,キャラクター追加
 RemoveCharacter,キャラクター削除
+UnEquip,装備解除

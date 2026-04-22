@@ -14,6 +14,8 @@ public class UiPannelInventory : MonoBehaviour
     public TextMeshProUGUI AddText;
     public TextMeshProUGUI RemoveText;
 
+    public UiCharacterInfo info;
+
     private void OnEnable()
     {
         OnLoad();
@@ -55,6 +57,13 @@ public class UiPannelInventory : MonoBehaviour
     public void OnRemoveItem()
     {
         uiInvenSlotList.RemoveItem();
+    }
 
+    public void OnUnEquip()
+    {
+        info.Weapon.SetEmpty();
+        info.saveCharacterData.Weapon = null;
+        info.SetSaveCharacterData(info.saveCharacterData);
+        gameObject.SetActive(false);
     }
 }

@@ -11,8 +11,8 @@ public class UiCharacterSlotList : MonoBehaviour
 {
     public readonly System.Comparison<SaveCharacterData>[] comparisons =
     {
-        (lhs, rhs) => lhs.creationTime.CompareTo(rhs.creationTime),
-        (lhs, rhs) => rhs.creationTime.CompareTo(lhs.creationTime),
+        (lhs, rhs) => lhs.CharacterData.Name == null ? -1 : lhs.creationTime.CompareTo(rhs.creationTime),
+        (lhs, rhs) => rhs.CharacterData.Name == null ? 1 : rhs.creationTime.CompareTo(lhs.creationTime),
         (lhs, rhs) => lhs.CharacterData.StringName.CompareTo(rhs.CharacterData.StringName),
         (lhs, rhs) => rhs.CharacterData.StringName.CompareTo(lhs.CharacterData.StringName),
     };
@@ -20,6 +20,10 @@ public class UiCharacterSlotList : MonoBehaviour
     public readonly System.Func<SaveCharacterData, bool>[] filterings =
     {
         (x) => true,
+        (x) => x.CharacterData.Id == "Character1",
+        (x) => x.CharacterData.Id == "Character2",
+        (x) => x.CharacterData.Id == "Character3",
+        (x) => x.CharacterData.Id == "Character4",
     };
 
     public UiCharacterSlot prefab;
@@ -34,7 +38,7 @@ public class UiCharacterSlotList : MonoBehaviour
     private FilteringOptions filtering = FilteringOptions.None;
 
     public string Type;
-    private int maxSlot = 8;
+    private int maxSlot = 28;
     private int charCount = 0;
 
     public SortingOptions Sorting
@@ -71,7 +75,6 @@ public class UiCharacterSlotList : MonoBehaviour
         {
             return;
         }
-        Debug.Log(1);
         characterInfo.SetSaveCharacterData(saveCharacterData);
     }
 
@@ -85,7 +88,7 @@ public class UiCharacterSlotList : MonoBehaviour
             return;
         }
         onSelectSlot.AddListener(OnsSelectSlot);
-        for(int i = 0; i < maxSlot; i++)
+        for(int i = charCount + 1; i < maxSlot; i++)
         {
             var character = new SaveCharacterData();
             character.CharacterData = DataTableManager.CharacterTable.Get(string.Empty);
@@ -154,7 +157,6 @@ public class UiCharacterSlotList : MonoBehaviour
             if (i < list.Count)
             {
                 uiSlotList[i].gameObject.SetActive(true);
-                Debug.Log(list[i]);
                 uiSlotList[i].SetItem(list[i]);
             }
             else

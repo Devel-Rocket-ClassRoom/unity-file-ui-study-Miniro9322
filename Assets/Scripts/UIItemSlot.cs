@@ -22,12 +22,10 @@ public class UIItemSlot : MonoBehaviour
     public void SetItem(SaveItemData data)
     {
         SaveItemData = data;
-        Debug.Log(data != null);
 
         if (data == null)
         {
             SetEmpty();
-            Debug.Log(1);
             return;
         }
         

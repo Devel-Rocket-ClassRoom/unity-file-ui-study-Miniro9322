@@ -99,11 +99,11 @@ public class UiInvenSlotList : MonoBehaviour
         {
             case "Weapon":
                 info.saveCharacterData.Weapon = saveItemData;
+                info.SetSaveCharacterData(info.saveCharacterData);
                 info.Weapon.SetItem(saveItemData);
                 break;
             case "Equip":
                 info.saveCharacterData.Equip = saveItemData;
-                Debug.Log(saveItemData == null);
                 info.Equip.SetItem(saveItemData);
                 break;
         }
